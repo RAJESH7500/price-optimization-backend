@@ -1,7 +1,7 @@
 from flask import Blueprint, request, jsonify
 from flask_jwt_extended import create_access_token, jwt_required
-from app.models.user import User
-from app.database import db
+from src.models.user import User
+from src.database import db
 from flask_cors import cross_origin
 
 auth_bp = Blueprint("auth", __name__)

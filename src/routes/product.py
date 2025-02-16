@@ -1,8 +1,8 @@
 from flask import Blueprint, request, jsonify
 from flask_jwt_extended import jwt_required
-from app.models.product import Product
-from app.database import db
-from app.utils.helpers import create_unique_id
+from src.models.product import Product
+from src.database import db
+from src.utils.helpers import create_unique_id
 
 product_bp = Blueprint("product", __name__)
 

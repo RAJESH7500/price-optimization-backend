@@ -1,6 +1,6 @@
 from flask import Blueprint, jsonify, request
 from flask_jwt_extended import jwt_required
-from app.models.product import Product
+from src.models.product import Product
 
 forecast_bp = Blueprint("forecast", __name__)
 

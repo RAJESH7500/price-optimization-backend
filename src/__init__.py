@@ -7,7 +7,7 @@ from .routes.auth import auth_bp
 from .routes.product import product_bp
 from .routes.forecast import forecast_bp
 from .routes.user import user_bp
-from app.database import db, jwt, migrate
+from src.database import db, jwt, migrate
 from .models.user import User
 
 
