@@ -29,7 +29,7 @@ def register():
         db.session.add(user)
         db.session.commit()
 
-        access_token = create_access_token(identity=user.id)
+        access_token = create_access_token(identity=str(user.id))
 
         return (
             jsonify(

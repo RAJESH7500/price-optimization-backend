@@ -139,7 +139,6 @@ desc: endpoint to get all list of products
 @product_bp.route("/products", methods=["GET", "OPTIONS"])
 @jwt_required()
 def get_products():
-    print("reuest method", request.method)
     query = Product.query
     # Search by name
     if "name" in request.args:
