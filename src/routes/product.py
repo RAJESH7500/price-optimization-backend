@@ -12,7 +12,7 @@ path: /api/products
 method: POST
 desc: endpoint to create new product
 """
-@product_bp.route("/", methods=["POST", "OPTIONS"])
+@product_bp.route("/products", methods=["POST"])
 @jwt_required()
 def create_product():
     data = request.get_json()
@@ -84,7 +84,7 @@ path: /api/products/:product_id
 method: GET
 desc: endpoint to get product detail by product id
 """
-@product_bp.route("/<int:product_id>", methods=["GET", "OPTIONS"])
+@product_bp.route("/products/<int:product_id>", methods=["GET", "OPTIONS"])
 def get_product(product_id):
     product = Product.query.get(product_id)
 
