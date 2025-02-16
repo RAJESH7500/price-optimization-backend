@@ -27,7 +27,6 @@ def create_app(config_class=Config):
     app.register_blueprint(product_bp, url_prefix="/api/products")
     app.register_blueprint(forecast_bp, url_prefix="/api/forecast")
     app.register_blueprint(user_bp, url_prefix="/api/users")
-    print("request reched here ")
 
     # load user
     @jwt.user_lookup_loader
