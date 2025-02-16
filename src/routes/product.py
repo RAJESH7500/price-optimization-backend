@@ -12,7 +12,7 @@ path: /api/products
 method: POST
 desc: endpoint to create new product
 """
-@product_bp.route("/", methods=["POST"])
+@product_bp.route("/", methods=["POST", "OPTIONS"])
 @jwt_required()
 def create_product():
     data = request.get_json()
@@ -41,7 +41,7 @@ path: /api/products/:product_id
 method: PUT
 desc: endpoint to update the product details
 """
-@product_bp.route("/<int:product_id>", methods=["PUT"])
+@product_bp.route("/products/<int:product_id>", methods=["PUT", "OPTIONS"])
 @jwt_required()
 def update_product(product_id):
     product = Product.query.get(product_id)
@@ -84,7 +84,7 @@ path: /api/products/:product_id
 method: GET
 desc: endpoint to get product detail by product id
 """
-@product_bp.route("/<int:product_id>", methods=["GET"])
+@product_bp.route("/<int:product_id>", methods=["GET", "OPTIONS"])
 def get_product(product_id):
     product = Product.query.get(product_id)
 
@@ -114,7 +114,7 @@ path: /api/products/:product_id
 method: DELETE
 desc: endpoint to delete product by product id
 """
-@product_bp.route("/<int:product_id>", methods=["DELETE"])
+@product_bp.route("/products/<int:product_id>", methods=["DELETE", "OPTIONS"])
 def delete_product(product_id):
     product = Product.query.get(product_id)
 
@@ -136,9 +136,10 @@ path: /api/products
 method: GET
 desc: endpoint to get all list of products
 """
-@product_bp.route("/", methods=["GET"])
+@product_bp.route("/products", methods=["GET", "OPTIONS"])
 @jwt_required()
 def get_products():
+    print("reuest method", request.method)
     query = Product.query
     # Search by name
     if "name" in request.args:

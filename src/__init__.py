@@ -20,11 +20,10 @@ def create_app(config_class=Config):
     db.init_app(app)
     migrate.init_app(app, db)
     jwt.init_app(app)
-    CORS(app)
-
+    
     # Register blueprints
     app.register_blueprint(auth_bp, url_prefix="/api/auth")
-    app.register_blueprint(product_bp, url_prefix="/api/products")
+    app.register_blueprint(product_bp, url_prefix="/api")
     app.register_blueprint(forecast_bp, url_prefix="/api/forecast")
     app.register_blueprint(user_bp, url_prefix="/api/users")
 
