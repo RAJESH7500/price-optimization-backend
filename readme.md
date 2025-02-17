@@ -3,8 +3,8 @@
 
 # steps
   1. Clone the repo using: git clone https://github.com/RAJESH7500/price-optimization-backend
-  2. install the requirements.txt using: pip3 install -r requirments.txt
-  3. Once the packages installed run the server using: gunicorn app:app 
+  2. install the requirements.txt using:---> <b>pip3 install -r requirments.txt<b/>
+  3. Once the packages installed run the server using:---> <b>gunicorn app:app<b/> 
   4. Now server will open on url [http://127.0.0.1:8000]
 # End points
 
